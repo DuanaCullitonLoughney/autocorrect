@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <title>Correct Spellings as Gaeilge</title>
+    <style>
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #7eecd4,#067e6c);
+
+}
+
+
+.main-heading{
+  position: absolute;
+  left: 40%;
+  top: 15%;
+  white-space: nowrap;
+ 
+
+}
+.main-heading2{
+  position: absolute;
+  left: 45%;
+  top: 15%;
+  white-space: nowrap;
+ 
+
+}
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+header h1{
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+header p{
+  font-size: 10px;
+  text-align: center;
+}
+
+
+.dropzone{
+  
+  width: 500px;
+  height:300px;
+  background: #fff;
+  border-radius:15px;
+  padding: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  padding: 0px;
+ 
+  position: absolute;
+  left: 33%; 
+  top: 30%; 
+}
+
+.dropzone form{
+  /*keep    align-items: center;
+  justify-content: center;*/
+  height:240px;
+  display: flex;
+  cursor: pointer;
+  margin: 30px 30px;
+  font-size: 10px;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #e3faf5;
+  border: 2px dashed #d9e7f7;
+  
+  padding:0px;
+}
+#drag_upload_file #selectfile {
+  display: none;
+}
+form :where(i, p){
+   
+  color: #bdacfc;
+}
+form i{
+  font-size: 50px;
+}
+form p{
+  margin-top: 15px;
+  font-size: 10px;
+}
+
+#image{
+  padding: 10px 0px 0px 20px; 
+}
+.file-input {
+   /*keep*/
+  background-color: #bdacfc;
+  color: white;
+  padding: 5px 20px 5px 20px;
+  margin: 0px 0px 0px 5px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dro{
+  
+  display:none;
+  align-items: center;
+  margin-top: 30px;
+}
+.output{
+  display: none;
+}
+#copyBtn {
+ 
+
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: none;
+  padding:5px 20px 5px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e3faf5;
+  background-color: #bdacfc;;
+  color: #e3faf5;
+  border-radius: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 0px 0px 40px 70px;
+  width: 50%;
+}
+#downloadBtn {
+
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: none;
+  padding:5px 20px 5px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e3faf5;
+  background-color: #bdacfc;;
+  color: #e3faf5;
+  border-radius: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 35px 5px 5px 5px;
+  width: 50%;
+}
+
+
+#outputarea {
+ 
+  resize: none;
+  height:300px;
+  width:300PX;
+  border-radius: 5px;
+  overflow-y: scroll;
+   color: white;
+  display: block;
+  background:#c7dbf1;
+  border-width: 2px;
+  border-style: none;
+  border-radius: 10px;
+  padding:30px;
+  margin: 5px 30px 0px 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  
+}
+#upload_left{
+
+float: left;
+margin: 30px 60px;
+margin: 30px 0px 30px 60px;
+
+
+}
+
+
+#upload_left p:first-of-type {
+ 
+  font-weight: bolder;
+  font-size: 10px;
+  padding: 0px 0px 0px 17px;
+}
+
+#upload_left p:nth-of-type(2) {
+  font-style: italic;
+  font-size: 10px;
+  
+}
+
+#upload_right{
+  padding: 25px 0px 0px 0px;
+float: right;
+margin: 5px 5px;
+
+}
+
+#upload_right p{
+  padding:0px 0px 0px 23px;
+  font-weight: bold;
+  font-size: 10px;
+
+}
+#enter{
+  display: block;
+  background:#d9e7f7;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bdacfc;
+  border-radius: 10px;
+  margin: 5px 30px 15px 20px;
+ 
+  width:140px;
+  height:90px
+  /* margin-top, margin-right, margin-bottom, and margin-left.*/
+
+}
+
+::placeholder {
+  color: white; /* set the color */
+  font-style: italic; /* set the font style */
+  font-size: 10px;
+  transform: translateY(-200%);
+}
+
+
+
+#submit{
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: none;
+  padding:0px 15px 0px 15px;
+  border-style: solid;
+  border-color: #bdacfc;
+  background-color: #e3faf5;
+  color: #bdacfc;
+  border-radius: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 35px 15px 30px 55px;
+  width: 50%;
+
+}
+
+
+
+
+.output h1{
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+.output p{
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+    </style>
+</head>
+<body>
+ 
+    <div id="inputpage">
+      <header>
+        <div class="main-heading">
+          <h1>Check and Correct Your Writing Here</h1>
+          <p><i>Seiceáil agus Ceartaigh do Litriú Anseo</i></p>
+        </div>
+      </header>
+  
+      <div class="dropzone" id="dropzone">
+        <form action="#" class="formm">
+          <div id="drag_upload_file">
+            <div id="upload_left">
+              <i id="image" class="fas fa-cloud-upload-alt"></i>
+              <p>Drop file here</p>
+              <p>- - - - - or - - - - - -</p>
+              <p><label class="file-input" value="Select File" onclick="file_explorer();">Select File</label></p>
+              <input type="file" id="selectfile" />
+            </div>
+  
+            <div id="upload_right">
+              <p>Write Your Own Sentence</p>
+              <input type="text" id="enter" name="username" placeholder="Start Typing...">
+              <a href="" id="submit">Submit</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="output" id="output">
+      <header>
+        <div class="main-heading2">
+          <h1>Your Results</h1>
+          <p><i>Do Thorthaí</i></p>
+        </div>
+      </header>
+  
+      <div class="textarea" id="textarea">
+        <div style="padding:40px">
+          <textarea id="outputarea"></textarea>
+        </div>
+      </div>
+  
+      <a href="" id="copyBtn"><i class="fas fa-copy"></i> Copy to Clipboard</a>
+      <a href="" download="file.txt" id="downloadBtn"><i class="fas fa-download"></i> Download Text</a>
+    </div>
+  
+
+    <script>
+    
+    var dropzone = document.getElementById('dropzone');
+    var inputpage = document.getElementById('inputpage');
+    var textarea = document.getElementById('textarea');
+    var output = document.getElementById('output');
+    var fileobj;
+
+// Add a dragover event listener to the dropzone element
+// This prevents the default behavior and changes the background color of the dropzone element
+dropzone.addEventListener('dragover', function(e) {
+   e.preventDefault();
+   dropzone.style.backgroundColor = '#e9e9e9';
+});
+
+// Add a dragleave event listener to the dropzone element
+// This prevents the default behavior and changes the background color of the dropzone element back to white
+dropzone.addEventListener('dragleave', function(e) {
+   e.preventDefault();
+   dropzone.style.backgroundColor = '#fff';
+});
+
+// Define a function to handle file upload
+function upload_file(e) {
+    e.preventDefault();
+    // Get the file object from the dataTransfer object of the event
+    fileobj = e.dataTransfer.files[0];
+    // Call the ajax_file_upload function with the file object
+    ajax_file_upload(fileobj);
+}
+
+// Define a function to handle file selection using the file explorer dialog
+function file_explorer() {
+    // Simulate a click on the selectfile input element
+    document.getElementById('selectfile').click();
+    // Add a change event listener to the selectfile input element
+    document.getElementById('selectfile').onchange = function() {
+        // Get the file object from the selected file
+        fileobj = document.getElementById('selectfile').files[0];
+        if (fileobj.name.split('.').pop() !== 'txt') {
+    alert('Please select a .txt file to upload.');
+    return;
+  }
+
+        // Call the ajax_file_upload function with the file object
+        ajax_file_upload(fileobj);
+    };
+}
+
+// Define a function to handle AJAX file upload
+function ajax_file_upload(file_obj) {
+  if (!file_obj) {
+        alert('Please select a file to upload.');
+        return;
+    }
+
+
+    // Check if the file has a .txt extension
+  
+
+    // Change the background color of the dropzone element back to white
+    dropzone.style.backgroundColor = '#fff';
+    // Create a new FormData object
+    var formdata = new FormData();
+    // Append the file object to the FormData object
+    formdata.append('file', file_obj);
+    // Create a new XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+    // Set the HTTP method and URL for the request
+    xhr.open('POST', '/upload');
+    // Send the FormData object in the request
+    xhr.send(formdata);
+    // Add an onload event listener to the XMLHttpRequest object
+    xhr.onload = function() {
+        // If the status code of the response is 200 (OK)
+        if (xhr.status === 200) {
+            // Log the response text to the console
+            console.log(xhr.responseText);
+            // Hide the inputpage element
+            inputpage.style.display = 'none';
+            // Set the value of the outputarea element to the response text
+            outputarea.value = xhr.responseText;
+            console.log( outputarea.value );
+            // Show the textarea and output elements
+            textarea.style.display ='flex';
+            output.style.display ='inline-block';
+        } else {
+            // If the status code of the response is not 200, show an error alert
+            alert('Word not available to correct!');
+        }
+    };
+}
+
+
+
+
+        // Listen for drop events on the dropzone
+dropzone.addEventListener('drop', function(e) {
+  console.log("Drag And Drop");
+
+  // Prevent default behavior
+  e.preventDefault();
+
+  // Change dropzone background color
+  dropzone.style.backgroundColor = '#fff';
+
+  // Get the dropped file
+  var file = e.dataTransfer.files[0];
+
+  if (file.size === 0) {
+    alert('Please select a file to upload.');
+    return;
+  }
+
+    // Check if the file has a .txt extension
+    if (file.name.split('.').pop() !== 'txt') {
+    alert('Please select a .txt file to upload.');
+    return;
+  }
+
+
+  // Create a FormData object and append the file to it
+  var formdata = new FormData();
+  formdata.append('file', file);
+
+  // Send the file to the server using an XMLHttpRequest
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/upload');
+  xhr.send(formdata);
+  console.log("xhr.resp");
+
+  // Handle the response from the server
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+
+      // Hide the input form and display the output area
+      inputpage.style.display = 'none';
+      outputarea.value = xhr.responseText;
+      console.log(outputarea.value);
+      textarea.style.display = 'flex';
+      output.style.display = 'inline-block';
+    } else {
+      alert('An error occurred!');
+    }
+  };
+});
+
+// Listen for click events on the copy button
+copyBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  console.log("Text Copied");
+
+  // Get the text to be copied
+  var textToCopy = document.getElementById('outputarea').value;
+
+  // Create a temporary textarea to copy the text
+  var textArea = document.createElement('textarea');
+  textArea.value = textToCopy;
+  document.body.appendChild(textArea);
+  textArea.select();
+
+  // Copy the text to the clipboard
+  document.execCommand('Copy');
+
+  // Remove the temporary textarea and show an alert
+  textArea.remove();
+  alert('Copied to clipboard!');
+});
+
+// Listen for click events on the download button
+var downloadBtn = document.getElementById('downloadBtn');
+downloadBtn.addEventListener('click', function() {
+  // Get the text from the textarea
+  var text = outputarea.value;
+
+  // Create a blob with the text and set the type to plain text
+  var blob = new Blob([text], { type: 'text/plain' });
+
+  // Set the href attribute of the download button to the URL of the blob object
+  downloadBtn.href = URL.createObjectURL(blob);
+});
+
+// Listen for click events on the submit button
+submit.addEventListener('click', function(e) {
+  e.preventDefault();
+  console.log("d");
+
+  // Get the input text
+  var string = document.getElementById('enter').value;
+  if (string == "") {
+    alert("Please enter a value for the input.");
+    return false;
+  }
+
+  // Create a blob with the text and set the type to plain text
+  var blob = new Blob([string], { type: 'text/plain' });
+
+  // Create a FormData object and append the blob to it
+  var formdata = new FormData();
+  formdata.append('file', blob, 'filename.txt');
+
+  // Send the blob to the server using an XMLHttpRequest
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/upload');
+  xhr.send(formdata);
+
+  // Handle the response from the server
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Hide the input form and display the output area
+      inputpage.style.display = 'none';
+      outputarea.value = xhr.responseText;
+      console.log(outputarea.value);
+      textarea.style.display = 'flex';
+      output.style.display = 'inline-block';
+    } else {
+      alert('Word not available to correct!');
+    }
+  };
+});
+
+
+
+
+    </script>
+</body>
+</html>
+
